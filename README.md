@@ -12,11 +12,8 @@ MENU
 2. Display data pencetak goal
    menampilkan data yang telah diinput tanpa sorting (data mentah). MAX 10	
 
-3. Display Top skor dan assist (menggunakan 2 jenis sorting yang berbeda)
-   if top skor
-   menampilkan data topskor/pencetak goal terbanyak dengan sorting. MAX 5  
-   else if top assist
-   menampilkan data topassist /pemberi assist terbanyak dengan sorting. MAX 5 
+3. Display Top skor dan assist (menggunakan 2 jenis sorting yang berbeda). 
+  
 4. Display topskor
    menampilkan 1 data topskor no 1
 5. Searching Pemain 
