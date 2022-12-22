@@ -12,7 +12,7 @@ MENU
 2. Display data pencetak goal
    menampilkan data yang telah diinput tanpa sorting (data mentah). MAX 10	
 
-3. Display Top skor dan assist (menggunakan 2 jenis sorting yang berbeda). MAX 5 data masing-masing
+3. Display Top skor dan assist (menggunakan 2 jenis sorting yang berbeda). masing-masing max 5 data
   
 4. Display topskor
    menampilkan 1 data topskor no 1
