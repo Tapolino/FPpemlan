@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#define MAX 50
+#define MAX 10
 
 typedef struct
 {
@@ -19,34 +19,43 @@ int main()
 	do
 	{
 		printf(" MENU\n");
-		printf(" 1. Input Data\n 2. Display Topskor\n 3. Display Top Assist\n 4. Pemain Terbaik\n 5. Searching\n 6. Exit\n\n");
+		printf(" 1. Input Data\n 2. Display Pencetak goal\n 3. Display Top Skor/Assist\n 4. Topskor \n 5. Searching\n 6. Exit\n\n");
 		printf(" Masukkan pilihan -> "); scanf("%d",&menu);
 		printf("\n");
 		switch(menu)
 		{
 			case 1:
 				{
-          //input data
+         				 //input data nama pemain, nama klub, jumlah goal, jumlah assist
 					break;
 				}
 			case 2:
 				{
-					//sorting topskor
+					//display semua data pencetak goal tanpa sorting
 					break;
 				}
 			case 3:
 				{
-					//sorting top assist
+					//display top skor/assist dengan 2 metode sorting yang berbeda
+					if(topskor)
+					{
+						//display top skor
+					}
+					else if(topassist)
+					{
+						//display top assist
+					}
+					else
 					break;
 				}
 			case 4:
 				{
-					//pemain terbaik
+					//dsiplay 1 data topskor dengan goal terbanyak
 					break;
 				}
 			case 5:
 				{
-					//searching
+					//searching nama pemain
 					break;
 				}
 			case 6:
