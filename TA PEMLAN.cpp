@@ -27,6 +27,7 @@ int main()
 			case 1:
 				{
          				 //input data nama pemain, nama klub, jumlah goal, jumlah assist
+					// max 10 data
 					break;
 				}
 			case 2:
@@ -39,11 +40,11 @@ int main()
 					//display top skor/assist dengan 2 metode sorting yang berbeda
 					if(topskor)
 					{
-						//display top skor
+						//display top skor descending max 5 data
 					}
 					else if(topassist)
 					{
-						//display top assist
+						//display top assist descending max 5 data
 					}
 					else
 					break;
