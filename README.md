@@ -23,14 +23,7 @@ MENU
    mencari data pemain menggunakan search nama pemain.
 6. Exit
 
-CONTOH TAMPILAN DATA :
-sebelum sorting/data mentah
 
- | no | nama pemain | klub | Goal | assist |
-   1    L Messi	    Persija   26       30   
-   ..    ..           ..     ..      ..
-
-   10   Ronaldo      Persib   30       10
 
 
    
