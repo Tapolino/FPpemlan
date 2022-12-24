@@ -66,8 +66,6 @@ void datainput(struct data_topskor *tops)
 	tops[9].asst = 17;
 }
 
-
-
 void TopAssistWithShellSort(struct data_topskor *tops, int n)
 {
 	int i, j, k;
@@ -181,6 +179,7 @@ int main()
 		}
 		case 2:
 		{
+			//display top goal max 5 data teratas
 			cout<<"\t\t\t\tDATA TOPSCORE\n";
 			break;
 		}
