@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <conio.h>
 using namespace std;
 
 #define max 10
@@ -15,7 +15,7 @@ data_topskor tops[max];
 
 void datainput(struct data_topskor *tops)
 {
-	tops[0].klub = "Persib";
+	tops[0].klub = "Persib\t";
 	tops[0].pemain = "Messi";
 	tops[0].goal = 19;
 	tops[0].asst = 26;
@@ -25,7 +25,7 @@ void datainput(struct data_topskor *tops)
 	tops[1].goal = 28;
 	tops[1].asst = 10;
 
-	tops[2].klub = "Persegres ";
+	tops[2].klub = "Selangor FA";
 	tops[2].pemain = "Lautaro";
 	tops[2].goal = 12;
 	tops[2].asst = 8;
@@ -40,23 +40,23 @@ void datainput(struct data_topskor *tops)
 	tops[4].goal = 20;
 	tops[4].asst = 5;
 
-	tops[5].klub = "Man Utd ";
-	tops[5].pemain = "Dedik S";
+	tops[5].klub = "Persipura";
+	tops[5].pemain = "Neymar";
 	tops[5].goal = 26;
 	tops[5].asst = 3;
 
-	tops[6].klub = "Deltras ";
+	tops[6].klub = "Martapura FC";
 	tops[6].pemain = "Halland";
 	tops[6].goal = 29;
 	tops[6].asst = 15;
 
-	tops[7].klub = "Persis\t";
+	tops[7].klub = "Persis Solo";
 	tops[7].pemain = "Benzema";
 	tops[7].goal = 16;
 	tops[7].asst = 7;
 
-	tops[8].klub = "Persik\t";
-	tops[8].pemain = "M Salah";
+	tops[8].klub = "Persik Kediri";
+	tops[8].pemain = "Salah";
 	tops[8].goal = 24;
 	tops[8].asst = 18;
 
@@ -66,20 +66,7 @@ void datainput(struct data_topskor *tops)
 	tops[9].asst = 17;
 }
 
-void TopScoreWithBubble(struct data_topskor *tops, int n)
-{
-	int i, j;
-	for (i = 0; i < n - 1; i++)
-		for (j = 0; j < n - i - 1; j++)
-			if (tops[j].goal > tops[j + 1].goal)
-			{
 
-				swap(tops[j].goal, tops[j + 1].goal);
-				swap(tops[j].pemain, tops[j + 1].pemain);
-				swap(tops[j].asst, tops[j + 1].asst);
-				swap(tops[j].klub, tops[j + 1].klub);
-			}
-}
 
 void TopAssistWithShellSort(struct data_topskor *tops, int n)
 {
@@ -119,6 +106,50 @@ void printArray(struct data_topskor *tops, int n)
 	}
 }
 
+void searchPemain(data_topskor tops[], int  n)
+{
+	string nama;
+	int flag=0;
+			cout<<"  Cari Pemain : "; cin>>nama;
+			for(int i=0;i<n;i++)
+			{
+				if(tops[i].pemain == nama)
+				{
+					cout<<"  Nama     : "<<nama<<endl;
+					cout<<"  Klub     : "<<tops[i].klub<<endl;
+					cout<<"  Goal     : "<<tops[i].goal<<endl;
+					cout<<"  Assist   : "<<tops[i].asst<<endl;
+					flag++;
+					break;
+				}	
+			}
+			if(flag==0)
+			{
+				cout<<"  Nama pemain "<<nama<<" tidak ditemukan"<<endl;
+			}
+			else
+			{
+				cout<<"  "<<nama<<" ada dalam jajaran topscore"<<endl;
+			}
+			cout<<"\n\t\t\t TEKAN APAPUN UNTUK KEMBALI!\n";
+	getch();system("cls");
+}
+void display(data_topskor *tops,int n)
+{
+	
+	cout<<" +------+------------------------+---------------+---------------+---------------+\n";
+	cout<<" | No\t|\tKlub\t\t | \tPemain\t | \tGoal\t | \tAssist\t |\n";
+	cout<<" +------+------------------------+---------------+---------------+---------------+\n";
+	for(int i=0;i<n;i++)
+	{
+		cout<<" | "<<i+1<<"\t|\t"<<tops[i].klub<<"\t | \t"<<tops[i].pemain<<"\t | \t"<<tops[i].goal<<"\t | \t"<<tops[i].asst<<"\t |\n";
+	}
+	cout<<" +------+------------------------+---------------+---------------+---------------+\n";
+	cout<<"\n\t\t\t TEKAN APAPUN UNTUK KEMBALI!\n";
+	getch(); system("cls");
+}
+
+
 int main()
 {
 	int menu, temp, i, j;
@@ -127,52 +158,60 @@ int main()
 	data_topskor tops[max];
 	datainput(tops);
 
-	printArray(tops, length);
+	//display(tops,max);
 	do
 	{
-		printf(" MENU\n");
-		printf(" 1. Display Goal Scorrer \n 2. Display Sorted Goal \n 3. Display Sorted Assist \n 4. Penghargaan topskor\n 5. Searching\n 6. Exit\n\n");
-		printf(" Masukkan pilihan -> ");
-		scanf("%d", &menu);
+		cout<<" ========================\n";
+		cout<<" |         MENU         |\n";
+		cout<<" +----------------------+\n";
+		cout<<" | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Best Player\t|\n | 5. Searching\t\t|\n | 6. Exit\t\t|\n";
+		cout<<" ========================\n";
+		cout<<"  Masukkan pilihan -> "; cin>>menu;
 		printf("\n");
 		switch (menu)
 		{
 		case 1:
 		{
 			// DISPLAY SELURUH DATA TANPA SORTING
+			cout<<"\t\t\t\tGOALSCORER\n";
 			datainput(tops);
-			printArray(tops, length);
+			display(tops,max);
 
 			break;
 		}
 		case 2:
 		{
-			TopScoreWithBubble(tops, length);
-			printArray(tops, 5);
-
+			cout<<"\t\t\t\tDATA TOPSCORE\n";
 			break;
 		}
 		case 3:
 		{
+			cout<<"\t\t\t\tDATA TOP ASSIST\n";
 			TopAssistWithShellSort(tops, length);
-			printArray(tops, 5);
+			display(tops,5);
 			break;
 		}
 		case 4:
 		{
-			// search
+			
+			break;
 		}
 		case 5:
 		{
-			// exit
+			//search
+			searchPemain(tops,max);
 			break;
 		}
+		case 6:
+			{
+				cout<<" \n\t\t\tKELUAR PROGRAM\n\n";
+			}
 		default:
 		{
 			system("cls");
 			break;
 		}
 		}
-	} while (menu != 5);
+	} while (menu != 6);
 	return 0;
 }
