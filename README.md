@@ -16,13 +16,17 @@ MENU
 2. Display data pencetak goal
    menampilkan data yang telah diinput tanpa sorting (data mentah). MAX 10	
 
-3. Display Top skor dan assist (menggunakan 2 jenis sorting yang berbeda). masing-masing max 5 data
+3. Display Sorting pemain Pencetak Goal (5 data) menggunakan bubble Sort.
+
+4. Display Sorting pemain Assist (5 data) menggunakan Shell Sort.
   
-4. Display topskor
+5.  Display topskor
    menampilkan 1 data topskor no 1
-5. Searching Pemain 
+   
+6. Searching Pemain 
    mencari data pemain menggunakan search nama pemain.
-6. Exit
+   
+7. Exit
 
 
 
