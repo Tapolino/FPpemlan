@@ -66,8 +66,33 @@ void datainput(struct data_topskor *tops)
 	tops[9].asst = 17;
 }
 
-void TopScoreWithBubble()
+void TopScoreWithBubble(struct data_topskor *tops, int n)
 {
+	int i, j;
+	for (i = 0; i < n - 1; i++)
+		for (j = 0; j < n - i - 1; j++)
+			if (tops[j].goal > tops[j + 1].goal)
+			{
+
+				swap(tops[j].goal, tops[j + 1].goal);
+				swap(tops[j].pemain, tops[j + 1].pemain);
+				swap(tops[j].asst, tops[j + 1].asst);
+				swap(tops[j].klub, tops[j + 1].klub);
+			}
+}
+
+void printArray(struct data_topskor *tops, int n)
+{
+	int i;
+	for (i = 0; i < n; i++)
+	{
+
+		cout << tops[i].goal << " ";
+		cout << tops[i].asst << " ";
+		cout << tops[i].klub << " ";
+		cout << tops[i].pemain << " ";
+		cout << endl;
+	}
 }
 
 void displayTopScore(struct data_topskor *tops)
@@ -81,10 +106,13 @@ void displayTopScore(struct data_topskor *tops)
 int main()
 {
 	int menu, temp, i, j;
+	int length = 10;
 	char *cari;
 	data_topskor tops[max];
 	datainput(tops);
 	displayTopScore(tops);
+	TopScoreWithBubble(tops, length);
+	printArray(tops, length);
 
 	do
 	{
