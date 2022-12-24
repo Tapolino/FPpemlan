@@ -1,13 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
-#include <string.h>
+#include <iostream>
+
+using namespace std;
+
 #define max 10
 
 struct data_topskor
 {
-	char *pemain;
-	char *klub;
+	string pemain;
+	string klub;
 	int goal;
 	int asst;
 };
@@ -15,7 +15,7 @@ data_topskor tops[max];
 
 void datainput(struct data_topskor *tops)
 {
-	tops[0].klub = "Persib\t";
+	tops[0].klub = "Persib";
 	tops[0].pemain = "Messi";
 	tops[0].goal = 19;
 	tops[0].asst = 26;
@@ -66,12 +66,25 @@ void datainput(struct data_topskor *tops)
 	tops[9].asst = 17;
 }
 
+void TopScoreWithBubble()
+{
+}
+
+void displayTopScore(struct data_topskor *tops)
+{
+	for (int index = 0; index < 10; index++)
+	{
+		cout << tops[index].pemain << endl;
+	}
+}
+
 int main()
 {
 	int menu, temp, i, j;
 	char *cari;
 	data_topskor tops[max];
 	datainput(tops);
+	displayTopScore(tops);
 
 	do
 	{
@@ -105,7 +118,6 @@ int main()
 			{
 				system("cls");
 			}
-			getch();
 			system("cls");
 			break;
 		}
