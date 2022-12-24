@@ -81,25 +81,41 @@ void TopScoreWithBubble(struct data_topskor *tops, int n)
 			}
 }
 
+void TopAssistWithShellSort(struct data_topskor *tops, int n)
+{
+	int i, j, k;
+	for (i = n / 2; i > 0; i = i / 2)
+	{
+		for (j = i; j < n; j++)
+		{
+			for (k = j - i; k >= 0; k = k - i)
+			{
+				if (tops[k + i].asst <= tops[k].asst)
+				{
+					break;
+				}
+				else
+				{
+					swap(tops[k].asst, tops[k + 1].asst);
+					swap(tops[k].goal, tops[k + 1].goal);
+					swap(tops[k].klub, tops[k + 1].klub);
+					swap(tops[k].pemain, tops[k + 1].pemain);
+				}
+			}
+		}
+	}
+}
+
 void printArray(struct data_topskor *tops, int n)
 {
 	int i;
 	for (i = 0; i < n; i++)
 	{
-
-		cout << tops[i].goal << " ";
-		cout << tops[i].asst << " ";
-		cout << tops[i].klub << " ";
-		cout << tops[i].pemain << " ";
+		cout << "Nama	: " << tops[i].pemain << endl;
+		cout << "Club	: " << tops[i].klub << endl;
+		cout << "Goal	: " << tops[i].goal << endl;
+		cout << "Assist	: " << tops[i].asst << endl;
 		cout << endl;
-	}
-}
-
-void displayTopScore(struct data_topskor *tops)
-{
-	for (int index = 0; index < 10; index++)
-	{
-		cout << tops[index].pemain << endl;
 	}
 }
 
@@ -110,14 +126,12 @@ int main()
 	char *cari;
 	data_topskor tops[max];
 	datainput(tops);
-	displayTopScore(tops);
-	TopScoreWithBubble(tops, length);
-	printArray(tops, length);
 
+	printArray(tops, length);
 	do
 	{
 		printf(" MENU\n");
-		printf(" 1. Display Goal Scorrer \n 2. Display Top skor/Assist\n 3. Penghargaan topskor\n 4. Searching\n 5. Exit\n\n");
+		printf(" 1. Display Goal Scorrer \n 2. Display Sorted Goal \n 3. Display Sorted Assist \n 4. Penghargaan topskor\n 5. Searching\n 6. Exit\n\n");
 		printf(" Masukkan pilihan -> ");
 		scanf("%d", &menu);
 		printf("\n");
@@ -126,33 +140,22 @@ int main()
 		case 1:
 		{
 			// DISPLAY SELURUH DATA TANPA SORTING
+			datainput(tops);
+			printArray(tops, length);
 
 			break;
 		}
 		case 2:
 		{
-			// sorting top skor/assist
-			int top;
-			printf("\n\n Display \n 1. Top Skor\n 2. Top Assist\n");
-			printf(" Masukkan pilihan -> ");
-			scanf("%d", &top);
-			if (top == 1) // sorting topskor max 5 desc
-			{
-			}
-			else if (top == 2) // sorting top assist max 5 desc
-			{
-			}
-			else
-			{
-				system("cls");
-			}
-			system("cls");
+			TopScoreWithBubble(tops, length);
+			printArray(tops, 5);
+
 			break;
 		}
 		case 3:
 		{
-
-			// penghargaan topskor 1 data teratas
+			TopAssistWithShellSort(tops, length);
+			printArray(tops, 5);
 			break;
 		}
 		case 4:
