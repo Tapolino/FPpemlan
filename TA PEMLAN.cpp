@@ -84,29 +84,21 @@ int main()
 		{
 			case 1:
 				{
-					//DISPLAY TANPA SORTING
-					printf(" +------+------------------------+---------------+---------------+---------------+\n");
-					printf(" | No\t|\tKlub\t\t | \tPemain\t | \tGoal\t | \tAssist\t |\n");
-					printf(" +------+------------------------+---------------+---------------+---------------+\n");
-					for(i=0;i<max;i++)
-					{
-						printf(" | %d\t|\t%s\t | \t%s\t | \t%d\t | \t%d\t |\n",i+1,tops[i].klub,tops[i].pemain,tops[i].goal,tops[i].asst);
-					}
-					printf(" +------+------------------------+---------------+---------------+---------------+\n");
-					getch(); system("cls");
+					//DISPLAY SELURUH DATA TANPA SORTING
+					
 					break;
 				}
 			case 2:
 				{
-					//sorting top skor/assist
+					//sorting top skor/assist 
 					int top;
 					printf("\n\n Display \n 1. Top Skor\n 2. Top Assist\n");
 					printf(" Masukkan pilihan -> "); scanf("%d",&top);
-					if(top == 1)//sorting topskor
+					if(top == 1)//sorting topskor max 5 desc
 					{
 								
 					}
-					else if(top == 2)//sorting top assist
+					else if(top == 2)//sorting top assist max 5 desc
 					{
 						
 					}
@@ -120,7 +112,7 @@ int main()
 			case 3:
 				{
 					
-					//penghargaan topskor
+					//penghargaan topskor 1 data teratas
 					break;
 				}
 			case 4:
@@ -138,6 +130,6 @@ int main()
 					break;
 				}
 		}
-	}while(menu!=6);
+	}while(menu!=5);
 	return 0;
 }
