@@ -91,6 +91,25 @@ void TopAssistWithShellSort(struct data_topskor *tops, int n)
 	}
 }
 
+void TopScorerWithBubbleSort(struct data_topskor *tops, int n)
+{
+	int i, j;
+	for (i=0;i < n - 1;i++)
+	{
+		for (j = 0; j < n - i - 1; j++)
+		{
+			if (tops[j].goal < tops[j+1].goal)
+			{
+			swap(tops[j].goal, tops[j + 1].goal);
+			swap(tops[j].pemain, tops[j +1].pemain);
+			swap(tops[j].asst, tops[j + 1].asst);
+			swap(tops[j].klub, tops[j + 1].klub);
+					
+			}
+		}
+	}
+}
+
 void searchPemain(data_topskor tops[], int  n)
 {
 	string nama;
@@ -172,6 +191,8 @@ int main()
 		{
 			//display top goal max 5 data teratas
 			cout<<"\t\t\t\tDATA TOPSCORE\n";
+			TopScorerWithBubbleSort(tops, length);
+			display(tops,5);
 			break;
 		}
 		case 3:
