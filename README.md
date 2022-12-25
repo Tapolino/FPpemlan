@@ -9,6 +9,14 @@ PROGRAM OVERVIEW
 
 materi struct,sorting, searching
 
+mencatat 10 data peserta Piala Dunia dalam 20 pertiandingan, data yang ditampilkan adalah:
+1. Nama pemain
+2. Negara
+3. Jumlah goal
+4. Jummlah Assist
+
+menyeeksi pemain terbaik dengan probabilitas assist dan gol dengan jumlah pertandingan
+
 MENU
 1. Input data pemain
    input data pemain meliputi nama pemain, klub, jumlah goal, jumlah assist. MAX 10
@@ -20,8 +28,7 @@ MENU
 
 4. Display Sorting pemain Assist (5 data) menggunakan Shell Sort.
   
-5.  Display topskor
-   menampilkan 1 data topskor no 1
+5. Display pemain terbaik
    
 6. Searching Pemain 
    mencari data pemain menggunakan search nama pemain.
