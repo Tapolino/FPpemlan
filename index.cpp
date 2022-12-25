@@ -17,13 +17,13 @@ void datainput(struct data_topskor *tops)
 {
 	tops[0].klub = "Persib\t";
 	tops[0].pemain = "Messi";
-	tops[0].goal = 19;
+	tops[0].goal = 15;
 	tops[0].asst = 26;
 
 	tops[1].klub = "Persita ";
 	tops[1].pemain = "Mbappe";
-	tops[1].goal = 28;
-	tops[1].asst = 10;
+	tops[1].goal = 27;
+	tops[1].asst = 12;
 
 	tops[2].klub = "Selangor FA";
 	tops[2].pemain = "Lautaro";
@@ -32,22 +32,22 @@ void datainput(struct data_topskor *tops)
 
 	tops[3].klub = "AS Roma ";
 	tops[3].pemain = "Boaz";
-	tops[3].goal = 30;
-	tops[3].asst = 21;
+	tops[3].goal = 19;
+	tops[3].asst = 14;
 
 	tops[4].klub = "Persija ";
 	tops[4].pemain = "Ronaldi";
-	tops[4].goal = 20;
+	tops[4].goal = 14;
 	tops[4].asst = 5;
 
 	tops[5].klub = "Persipura";
 	tops[5].pemain = "Neymar";
-	tops[5].goal = 26;
-	tops[5].asst = 3;
+	tops[5].goal = 11;
+	tops[5].asst = 16;
 
 	tops[6].klub = "Martapura FC";
 	tops[6].pemain = "Halland";
-	tops[6].goal = 29;
+	tops[6].goal = 21;
 	tops[6].asst = 15;
 
 	tops[7].klub = "Persis Solo";
@@ -57,13 +57,13 @@ void datainput(struct data_topskor *tops)
 
 	tops[8].klub = "Persik Kediri";
 	tops[8].pemain = "Salah";
-	tops[8].goal = 24;
-	tops[8].asst = 18;
+	tops[8].goal = 18;
+	tops[8].asst = 13;
 
 	tops[9].klub = "Persija ";
 	tops[9].pemain = "Nunez";
-	tops[9].goal = 47;
-	tops[9].asst = 17;
+	tops[9].goal = 26;
+	tops[9].asst = 10;
 }
 
 void TopAssistWithShellSort(struct data_topskor *tops, int n)
@@ -91,19 +91,6 @@ void TopAssistWithShellSort(struct data_topskor *tops, int n)
 	}
 }
 
-void printArray(struct data_topskor *tops, int n)
-{
-	int i;
-	for (i = 0; i < n; i++)
-	{
-		cout << "Nama	: " << tops[i].pemain << endl;
-		cout << "Club	: " << tops[i].klub << endl;
-		cout << "Goal	: " << tops[i].goal << endl;
-		cout << "Assist	: " << tops[i].asst << endl;
-		cout << endl;
-	}
-}
-
 void searchPemain(data_topskor tops[], int  n)
 {
 	string nama;
@@ -113,25 +100,30 @@ void searchPemain(data_topskor tops[], int  n)
 			{
 				if(tops[i].pemain == nama)
 				{
-					cout<<"  Nama     : "<<nama<<endl;
-					cout<<"  Klub     : "<<tops[i].klub<<endl;
-					cout<<"  Goal     : "<<tops[i].goal<<endl;
-					cout<<"  Assist   : "<<tops[i].asst<<endl;
+					cout<<" ------------------------"<<endl; 
+					cout<<" Topscore ke "<<i+1<<endl;
+					cout<<" ------------------------"<<endl; 
+					cout<<" Nama     : "<<nama<<endl;
+					cout<<" Klub     : "<<tops[i].klub<<endl;
+					cout<<" Goal     : "<<tops[i].goal<<endl;
+					cout<<" Assist   : "<<tops[i].asst<<endl;
+					cout<<" ------------------------"<<endl;
 					flag++;
 					break;
 				}	
 			}
 			if(flag==0)
 			{
-				cout<<"  Nama pemain "<<nama<<" tidak ditemukan"<<endl;
+				cout<< "\n  Nama pemain "<<nama<<" tidak ada dalam jajaran topscore\n"<<endl;
 			}
 			else
 			{
-				cout<<"  "<<nama<<" ada dalam jajaran topscore"<<endl;
+				cout<<" "<<nama<<" ada dalam jajaran topscore"<<endl;
 			}
 			cout<<"\n\t\t\t TEKAN APAPUN UNTUK KEMBALI!\n";
 	getch();system("cls");
 }
+
 void display(data_topskor *tops,int n)
 {
 	
@@ -143,10 +135,9 @@ void display(data_topskor *tops,int n)
 		cout<<" | "<<i+1<<"\t|\t"<<tops[i].klub<<"\t | \t"<<tops[i].pemain<<"\t | \t"<<tops[i].goal<<"\t | \t"<<tops[i].asst<<"\t |\n";
 	}
 	cout<<" +------+------------------------+---------------+---------------+---------------+\n";
-	cout<<"\n\t\t\t TEKAN APAPUN UNTUK KEMBALI!\n";
+	cout<<"\n\t\t\t   TEKAN APAPUN UNTUK KEMBALI!\n";
 	getch(); system("cls");
 }
-
 
 int main()
 {
