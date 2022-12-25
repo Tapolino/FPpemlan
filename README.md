@@ -10,20 +10,21 @@ PROGRAM OVERVIEW
 
 materi struct,sorting, searching
 
-mencatat 10 data peserta Piala Dunia dalam 20 pertiandingan, data yang ditampilkan adalah:
+mencatat 10 data peserta Piala Dunia dalam 20 pertandingan
+data yang ditampilkan adalah:
 1. Nama pemain
 2. Negara
 3. Jumlah goal
 4. Jummlah Assist
 
-menyeeksi pemain terbaik dengan probabilitas assist dan gol dengan jumlah pertandingan
+menyeleksi pemain terbaik dengan probabilitas assist dan gol dengan jumlah pertandingan
 
 MENU
-1. Input data pemain
-   input data pemain meliputi nama pemain, klub, jumlah goal, jumlah assist. MAX 10
-
-2. Display data pencetak goal
-   menampilkan data yang telah diinput tanpa sorting (data mentah). MAX 10	
+1. Display data pemain
+   menampilkan data yang telah diinput tanpa sorting (data mentah).
+   
+2. Input data pemain
+   input data pemain meliputi nama pemain, klub, jumlah goal, jumlah assist.
 
 3. Display Sorting pemain Pencetak Goal (5 data) menggunakan bubble Sort.
 
