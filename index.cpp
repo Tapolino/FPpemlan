@@ -2,7 +2,7 @@
 #include <conio.h>
 using namespace std;
 
-#define max 10
+#define max 15
 
 struct data_topskor
 {
@@ -110,6 +110,37 @@ void TopScorerWithBubbleSort(struct data_topskor *tops, int n)
 	}
 }
 
+void Adddata(struct data_topskor *tops)
+{	
+			int size = 0;
+   				
+		for (int i = 0; i < max; i++) {
+		  if (tops[i].pemain.empty()) {
+		    break;
+		  }
+		  size++;
+		}
+		cout << "Jumlah pemain sekarang : " << size << endl;
+		
+			cout << " ==++Data Pemain Baru++==" << endl;
+			cout << " Klub: ";
+			cin>>tops[size].klub;
+		
+			cout << " Pemain: ";
+			cin>>tops[size].pemain;
+		
+			cout << " Goal: ";
+			cin >> tops[size].goal;
+			
+			cout << " Asst: ";
+			cin >> tops[size].asst;
+		
+			cout << endl;
+				
+			cout << tops[size].klub <<" dengan para pemain " << tops[size].pemain;
+			cout << " dengan goal yang tercetak " << tops[size].goal <<" memiliki asst " << tops[size].asst <<" dalam pertandingan " << endl;
+}
+
 void searchPemain(data_topskor tops[], int  n)
 {
 	string nama;
@@ -169,10 +200,11 @@ int main()
 	//display(tops,max);
 	do
 	{
+		
 		cout<<" ========================\n";
 		cout<<" |         MENU         |\n";
 		cout<<" +----------------------+\n";
-		cout<<" | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Best Player\t|\n | 5. Searching\t\t|\n | 6. Exit\t\t|\n";
+		cout<<" | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Add Data\t|\n | 5. Searching\t\t|\n | 6. Exit\t\t|\n";
 		cout<<" ========================\n";
 		cout<<"  Masukkan pilihan -> "; cin>>menu;
 		printf("\n");
@@ -204,7 +236,10 @@ int main()
 		}
 		case 4:
 		{
-			
+			//menambahkan menu data
+			cout<<"\t\t\t\tAdd data\n";
+			Adddata(tops);
+			display(tops,max);
 			break;
 		}
 		case 5:
