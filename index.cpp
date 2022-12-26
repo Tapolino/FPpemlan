@@ -123,41 +123,6 @@ void TopScorerWithBubbleSort(struct data_topskor *tops, int n)
 	}
 }
 
-// Tambah Data
-void Adddata(struct data_topskor *tops)
-{
-	int size = 0;
-
-	for (int i = 0; i < max; i++)
-	{
-		if (tops[i].pemain.empty())
-		{
-			break;
-		}
-		size++;
-	}
-	cout << " ===========================\n";
-	cout << "           ADD DATA        \n";
-	cout << " ===========================\n";
-	cout << " Jumlah pemain sekarang : " << size << endl;
-	cout << " ---------------------------\n";
-	cout << " Negara : ";
-	cin >> tops[size].klub;
-
-	cout << " Pemain : ";
-	cin >> tops[size].pemain;
-
-	cout << " Goal   : ";
-	cin >> tops[size].goal;
-
-	cout << " Assist : ";
-	cin >> tops[size].asst;
-
-	cout << endl;
-	cout << " ===========================\n";
-	cout << " Data pemain "<<tops[size].pemain<<" telah ditambahkan\n";
-}
-
 // Search Pemain
 void searchPemain(data_topskor tops[], int n)
 {
@@ -257,7 +222,7 @@ int main()
 		cout << " ========================\n";
 		cout << " |         MENU         |\n";
 		cout << " +----------------------+\n";
-		cout << " | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Add Data\t\t|\n | 5. Searching\t\t|\n | 6. Top Player\t|\n | 7. exit\t\t| \n";
+		cout << " | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Searching\t\t|\n | 5. Top Player\t|\n | 6. exit\t\t| \n";
 		cout << " ========================\n";
 		cout << "  Masukkan pilihan -> ";
 		cin >> menu;
@@ -288,20 +253,14 @@ int main()
 			display(tops, 5);
 			break;
 		}
+
 		case 4:
-		{
-			// menambahkan menu data
-			Adddata(tops);
-			display(tops, max);
-			break;
-		}
-		case 5:
 		{
 			// search
 			searchPemain(tops, max);
 			break;
 		}
-		case 6:
+		case 5:
 		{
 			// top 3 pemain
 			topplayer(tops, max);
@@ -309,16 +268,17 @@ int main()
 			break;
 		}
 
-		case 7:
+		case 6:
 		{
 			cout << " \n\t\t\tKELUAR PROGRAM\n\n";
 			break;
 		}
 		default:
 		{
-			cout<<" \t\t    MENU TIDAK TERSEDIA\n";
+			cout << " \t\t    MENU TIDAK TERSEDIA\n";
 			cout << "\n\t\tTEKAN APAPUN UNTUK KEMBALI!\n";
-			getch();system("cls");
+			getch();
+			system("cls");
 			break;
 		}
 		}
