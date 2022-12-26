@@ -22,18 +22,19 @@ menyeleksi pemain terbaik dengan probabilitas assist dan gol dengan jumlah perta
 MENU
 1. Display data pemain
    ( menampilkan data yang telah diinput tanpa sorting (data mentah). )
-   
-2. Input data pemain \n
+
+2. Display Sorting pemain Pencetak Goal (5 data) menggunakan bubble Sort.
+
+3. Display Sorting pemain Assist (5 data) menggunakan Shell Sort.
+
+4.  Input data pemain \n
    ( input data pemain meliputi nama pemain, klub, jumlah goal, jumlah assist. )
-
-3. Display Sorting pemain Pencetak Goal (5 data) menggunakan bubble Sort.
-
-4. Display Sorting pemain Assist (5 data) menggunakan Shell Sort.
-  
-5. Display pemain terbaik
    
-6. Searching Pemain
-   ( mencari data pemain menggunakan search nama pemain. )
+5. Searching Pemain
+   ( mencari data pemain menggunakan search nama pemain.)
+ 
+6. Display 3 Top Player
+   ( menampilkan 3 pemain dengan nilai probabilitas tertinggi )
    
 7. Exit
 
