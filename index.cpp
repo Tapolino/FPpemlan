@@ -35,44 +35,44 @@ void datainput(struct data_topskor *tops)
 	tops[2].asst = 6;
 	tops[2].prob;
 
-	tops[3].klub = "Brazil ";
+	tops[3].klub = "Brazil\t";
 	tops[3].pemain = "Neymar";
 	tops[3].goal = 15;
 	tops[3].asst = 9;
 	tops[3].prob;
 
-	tops[4].klub = "England";
-	tops[4].pemain = "Harry Meguire";
+	tops[4].klub = "England\t";
+	tops[4].pemain = "Meguire";
 	tops[4].goal = 13;
 	tops[4].asst = 8;
 	tops[4].prob;
 
-	tops[5].klub = "Jepang";
-	tops[5].pemain = "Maya Yoshida";
+	tops[5].klub = "Jepang\t";
+	tops[5].pemain = "Yoshida";
 	tops[5].goal = 12;
 	tops[5].asst = 8;
 	tops[5].prob;
 
-	tops[6].klub = "Polandia ";
-	tops[6].pemain = "Lewandowski";
+	tops[6].klub = "Belgia\t";
+	tops[6].pemain = "Lukaku";
 	tops[6].goal = 15;
 	tops[6].asst = 7;
 	tops[6].prob;
 
-	tops[7].klub = "Kroasia";
-	tops[7].pemain = "Josko Gvardiol";
+	tops[7].klub = "Kroasia\t";
+	tops[7].pemain = "Modric";
 	tops[7].goal = 13;
 	tops[7].asst = 7;
 	tops[7].prob;
 
-	tops[8].klub = "Maroko";
+	tops[8].klub = "Maroko\t";
 	tops[8].pemain = "Hakimi";
 	tops[8].goal = 10;
 	tops[8].asst = 5;
 	tops[8].prob;
 
-	tops[9].klub = "Brazil";
-	tops[9].pemain = "Richarlison";
+	tops[9].klub = "Brazil\t";
+	tops[9].pemain = "GabJes";
 	tops[9].goal = 11;
 	tops[9].asst = 5;
 	tops[9].prob;
@@ -136,25 +136,26 @@ void Adddata(struct data_topskor *tops)
 		}
 		size++;
 	}
-	cout << "Jumlah pemain sekarang : " << size << endl;
-
-	cout << " ==++Data Pemain Baru++==" << endl;
-	cout << " Klub: ";
+	cout << " ===========================\n";
+	cout << "           ADD DATA        \n";
+	cout << " ===========================\n";
+	cout << " Jumlah pemain sekarang : " << size << endl;
+	cout << " ---------------------------\n";
+	cout << " Negara : ";
 	cin >> tops[size].klub;
 
-	cout << " Pemain: ";
+	cout << " Pemain : ";
 	cin >> tops[size].pemain;
 
-	cout << " Goal: ";
+	cout << " Goal   : ";
 	cin >> tops[size].goal;
 
-	cout << " Asst: ";
+	cout << " Assist : ";
 	cin >> tops[size].asst;
 
 	cout << endl;
-
-	cout << tops[size].klub << " dengan para pemain " << tops[size].pemain;
-	cout << " dengan goal yang tercetak " << tops[size].goal << " memiliki asst " << tops[size].asst << " dalam pertandingan " << endl;
+	cout << " ===========================\n";
+	cout << " Data pemain "<<tops[size].pemain<<" telah ditambahkan\n";
 }
 
 // Search Pemain
@@ -250,11 +251,13 @@ int main()
 	// display(tops,max);
 	do
 	{
-
+		cout << " ========================\n";
+		cout << " ||  PROGRAM TOPSCORE  ||\n";
+		cout << " ||     PIALA DUNIA    ||\n";
 		cout << " ========================\n";
 		cout << " |         MENU         |\n";
 		cout << " +----------------------+\n";
-		cout << " | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Add Data\t|\n | 5. Searching\t\t|\n | 6. Top Player\t\t|\n | 7. exit\t\t| \n";
+		cout << " | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Add Data\t\t|\n | 5. Searching\t\t|\n | 6. Top Player\t|\n | 7. exit\t\t| \n";
 		cout << " ========================\n";
 		cout << "  Masukkan pilihan -> ";
 		cin >> menu;
@@ -288,7 +291,6 @@ int main()
 		case 4:
 		{
 			// menambahkan menu data
-			cout << "\t\t\t\tAdd data\n";
 			Adddata(tops);
 			display(tops, max);
 			break;
@@ -304,18 +306,22 @@ int main()
 			// top 3 pemain
 			topplayer(tops, max);
 			display(tops, 3);
+			break;
 		}
 
 		case 7:
 		{
 			cout << " \n\t\t\tKELUAR PROGRAM\n\n";
+			break;
 		}
 		default:
 		{
-			system("cls");
+			cout<<" \t\t    MENU TIDAK TERSEDIA\n";
+			cout << "\n\t\tTEKAN APAPUN UNTUK KEMBALI!\n";
+			getch();system("cls");
 			break;
 		}
 		}
-	} while (menu != 6);
+	} while (menu != 7);
 	return 0;
 }
