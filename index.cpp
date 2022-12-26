@@ -2,7 +2,7 @@
 #include <conio.h>
 using namespace std;
 
-#define max 15
+#define max 10
 
 struct data_topskor
 {
@@ -14,6 +14,7 @@ struct data_topskor
 };
 data_topskor tops[max];
 
+// data pemain
 void datainput(struct data_topskor *tops)
 {
 	tops[0].klub = "Argentina";
@@ -77,6 +78,7 @@ void datainput(struct data_topskor *tops)
 	tops[9].prob;
 }
 
+// sorting menurut assist
 void TopAssistWithShellSort(struct data_topskor *tops, int n)
 {
 	int i, j, k;
@@ -102,6 +104,7 @@ void TopAssistWithShellSort(struct data_topskor *tops, int n)
 	}
 }
 
+// sortig menurut goal
 void TopScorerWithBubbleSort(struct data_topskor *tops, int n)
 {
 	int i, j;
@@ -120,6 +123,7 @@ void TopScorerWithBubbleSort(struct data_topskor *tops, int n)
 	}
 }
 
+// Tambah Data
 void Adddata(struct data_topskor *tops)
 {
 	int size = 0;
@@ -153,6 +157,7 @@ void Adddata(struct data_topskor *tops)
 	cout << " dengan goal yang tercetak " << tops[size].goal << " memiliki asst " << tops[size].asst << " dalam pertandingan " << endl;
 }
 
+// Search Pemain
 void searchPemain(data_topskor tops[], int n)
 {
 	string nama;
@@ -189,6 +194,35 @@ void searchPemain(data_topskor tops[], int n)
 	system("cls");
 }
 
+// top player
+void topplayer(struct data_topskor *tops, int n)
+{
+	int x;
+
+	for (x = 0; x < n; x++)
+	{
+		tops[x].prob = tops[x].goal + tops[x].asst; // jumlah pertandingan
+		tops[x].prob = tops[x].prob / 20;
+	}
+
+	for (int i = 0; i < n - 1; i++)
+	{
+
+		for (int j = 0; j < n - i - 1; j++)
+		{
+			if (tops[j].prob < tops[j + 1].prob)
+			{
+				swap(tops[j].prob, tops[j + 1].prob);
+				swap(tops[j].goal, tops[j + 1].goal);
+				swap(tops[j].pemain, tops[j + 1].pemain);
+				swap(tops[j].asst, tops[j + 1].asst);
+				swap(tops[j].klub, tops[j + 1].klub);
+			}
+		}
+	}
+}
+
+// display
 void display(data_topskor *tops, int n)
 {
 
@@ -213,6 +247,9 @@ int main()
 	data_topskor tops[max];
 	datainput(tops);
 
+	int n = sizeof(tops) / sizeof(tops[0]);
+	cout << n;
+
 	// display(tops,max);
 	do
 	{
@@ -220,7 +257,7 @@ int main()
 		cout << " ========================\n";
 		cout << " |         MENU         |\n";
 		cout << " +----------------------+\n";
-		cout << " | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Add Data\t|\n | 5. Searching\t\t|\n | 6. Exit\t\t|\n";
+		cout << " | 1. Display Player\t|\n | 2. Top 5 Goalscorer\t|\n | 3. Top 5 Assister\t|\n | 4. Add Data\t|\n | 5. Searching\t\t|\n | 6. Top Player\t\t|\n | 7. exit\t\t| \n";
 		cout << " ========================\n";
 		cout << "  Masukkan pilihan -> ";
 		cin >> menu;
@@ -266,6 +303,13 @@ int main()
 			break;
 		}
 		case 6:
+		{
+			// top 3 pemain
+			topplayer(tops, max);
+			display(tops, 3);
+		}
+
+		case 7:
 		{
 			cout << " \n\t\t\tKELUAR PROGRAM\n\n";
 		}
