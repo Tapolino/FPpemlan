@@ -247,9 +247,6 @@ int main()
 	data_topskor tops[max];
 	datainput(tops);
 
-	int n = sizeof(tops) / sizeof(tops[0]);
-	cout << n;
-
 	// display(tops,max);
 	do
 	{
