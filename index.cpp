@@ -282,6 +282,6 @@ int main()
 			break;
 		}
 		}
-	} while (menu != 7);
+	} while (menu != 6);
 	return 0;
 }
