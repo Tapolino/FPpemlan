@@ -28,15 +28,12 @@ MENU
 2. Display Sorting pemain Pencetak Goal (5 data) menggunakan bubble Sort.
 
 3. Display Sorting pemain Assist (5 data) menggunakan Shell Sort.
-
-4.  Input data pemain \n
-   ( input data pemain meliputi nama pemain, klub, jumlah goal, jumlah assist. )
    
-5. Searching Pemain
+4. Searching Pemain
    ( mencari data pemain menggunakan search nama pemain.)
  
-6. Display 3 Top Player
+5. Display 3 Top Player
    ( menampilkan 3 pemain dengan nilai probabilitas tertinggi )
    
-7. Exit
+6. Exit
    
