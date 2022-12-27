@@ -38,8 +38,4 @@ MENU
    ( menampilkan 3 pemain dengan nilai probabilitas tertinggi )
    
 7. Exit
-
-
-
-
    
