@@ -6,7 +6,7 @@ ANGGOTA KELOMPOK
 2. Bintang Jagad Syah Sana 21081010005 
 3. Nurul Aini Alifah 21081010012
 4. Hilmi Nur Ramadhani 21081010007
-
+5. Ali Muhamed Baabood 20081018261
 PROGRAM OVERVIEW
 
 materi struct,sorting, searching
